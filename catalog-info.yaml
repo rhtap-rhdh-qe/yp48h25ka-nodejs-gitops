@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: yp48h25ka-nodejs-gitops
+  description: This is GitOps manifest for yp48h25ka-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=yp48h25ka-nodejs
+    backstage.io/kubernetes-id: yp48h25ka-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: yp48h25ka-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:yp48h25ka-nodejs
